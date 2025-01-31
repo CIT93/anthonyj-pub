@@ -1,3 +1,6 @@
+let carbonPoints = 0;
+//const numberInHousehold = 3;
+
 function calcHomePoints(numberInHousehold) {
     console.log("Inside the function")
     if (numberInHousehold === 1) {
@@ -18,11 +21,22 @@ function calcHomePoints(numberInHousehold) {
     console.log(`Based on the number of members in the household of ${numberInHousehold} the points would be ${carbonPoints}. `);
 }
 
-let carbonPoints = 0;
-const numberInHousehold = 3;
+function considerHomeSize(homeSize) {
+    console.log("Inside the function");
+    if (homeSize === "Apt") {
+        carbonPoints = carbonPoints + 2;
+    } else if (homeSize === "Sml") {
+        carbonPoints = carbonPoints + 4;
+    } else if (homeSize === "Med") {
+        carbonPoints = carbonPoints + 7;
+    } else if (homeSize === "Lrg") {
+        carbonPoints = carbonPoints + 10;
+    }
+    console.log(`Based on the ${homeSize} household size the carbon footprint would be ${carbonPoints}`)
+}
 
 
 // global scope
 
 calcHomePoints(3)
-calcHomePoints(4)
+considerHomeSize("Sml")
