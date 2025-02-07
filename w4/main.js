@@ -43,8 +43,14 @@ function start(houseHoldMembers, houseSize) {
 }
 
 function displayOutput() {
-
-}
+    for (arr of cfpData) {
+      console.log(arr);
+      const output = document.getElementById("output");
+      const newP = document.createElement("p");
+      newP.textContent = `Having a household with ${arr[0]} individuals will give ${arr[2]} carbon points. Living in a ${arr[1]}-sized home gives ${arr[3]} carbon points. This shows a total carbon footprint of ${arr[4]}.`;
+      output.appendChild(newP);
+    }
+  }
 
 start(5, "apt");
 start(4, "large");
@@ -56,6 +62,7 @@ start(4, "apt");
 start(5, "large");
 start(6, "medium");
 start(7, "small");
+
 
 displayOutput()
 
