@@ -76,20 +76,16 @@ function determineHouseSizePts(size) {
       console.log(obj)
       const output = document.getElementById("output");
       const newH2 = document.createElement("h2");
-      newH2.textContent = `Carbon Footprint ${obj.total}`
-      output.appendChild(newH2)
-      /*console.log(i)
-      const output = document.getElementById("output");
-      const newP = document.createElement("p");
-      const newH2 = document.createElement("h2")
-      newH2.textContent = `Carbon Footprint ${cfpData [i] [4]}`
       const newH3 = document.createElement("h3")
-      newH3.textContent = 'Based on Number in Household and Size of Home'
-      newP.textContent = `This number is based on the number of members of the household of ${cfpData [i] [0]} (score: ${cfpData [i] [3]})`;
-      newP.textContent += `and a ${cfpData [i] [1]} size of home (score: ${cfpData [i] [2]})`
-      output.appendChild(newH2);
-      output.appendChild(newH3);
-      output.appendChild(newP); */
+      const newP = document.createElement("newP")
+      newH2.textContent = `My carbon footprint total is ${obj.total}`
+      newH3.textContent = `Based on Number in household and size of home`
+      newP.textContent = `This number is based on the number of the household of ${obj.houseHoldMembers} (score: ${obj.houseHoldPTS})`
+      newP.textContent += `and a ${obj.houseSize} size of home (score ${obj.houseSizePts})`
+      output.appendChild(newH2)
+      output.appendChild(newH3)
+      output.appendChild(newP)
+
     }
   }
   
