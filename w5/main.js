@@ -1,5 +1,41 @@
-const cfpData = [];
 
+
+const movieData = [];
+
+
+function start() {
+     movieData.push(
+    {movie: "Planet of the Apes", year: 1956, rating: "8/10"},
+    {movie: "Joy Ride", year: 2023, rating: "9/10"},
+    {movie: "Godzilla Minus One", year: 2023, rating: "10/10"}
+     )
+}
+
+function displayMovieList(){
+const movieList = document.getElementById("movieList");
+for (movie of movieData) {
+    console.log(movie.movie)
+    console.log(movie.year)
+    console.log(movie.rating)
+    const movieTitle = document.createElement("p");
+    const movieYear = document.createElement("p");
+    const movieRating = document.createElement("p");
+    movieTitle.textContent = movie.movie;
+    movieYear.textContent = `This movie came out in ${movie.year}`;
+    movieRating.textContent = `I have given this a personal rating of ${movie.rating}`;
+    movieList.appendChild(movieTitle);
+    movieList.appendChild(movieYear);
+    movieList.appendChild(movieRating);
+    
+}
+}
+start()
+displayMovieList();
+
+// OLLLLLLLLLLLLLLLLLLLD CODE
+
+/*
+const cfpData = [];
 function determineHouseSizePts(size) {
     let houseSizePoints = 0;
     if(size === "large") {
@@ -48,33 +84,9 @@ function determineHouseSizePts(size) {
 
   }
   
-    //cfpData.push([houseHoldMembers, houseSize, houseHoldPTS, houseSizePts, total]);
-    function displayOut(carbonObj) {
-      const total = document.createElement("p");
-      const houseHold = document.createElement("p");
-      const size = document.createElement("p");
-      const members = document.createElement("p");
-      const house = document.createElement("p");
-      total.textContent = `the total carbon foot print is: ${carbonObj.total}`;
-    houseHold.textContent = `Household Points: ${carbonObj.houseHoldPTS}`;
-    size.textContent = `House Size Points: ${carbonObj.houseSizePts}`;
-    members.textContent = `Household Members: ${carbonObj.houseHoldMembers}`;
-    house.textContent = `House Size: ${carbonObj.houseSize}`;
-      const output = document.getElementById("output")
-      output.appendChild(total);
-      output.appendChild(houseHold);
-      output.appendChild(size);
-      output.appendChild(members);
-      output.appendChild(house);
-      }
-  
-  
-  
-  
   function displayOutput() {
-    for(obj of cfpData) {
-      console.log(obj)
-      const output = document.getElementById("output");
+    const output = document.getElementById("output");
+    for (obj of cfpData) {
       const newH2 = document.createElement("h2");
       const newH3 = document.createElement("h3")
       const newP = document.createElement("newP")
@@ -89,7 +101,7 @@ function determineHouseSizePts(size) {
     }
   }
   
-  start(1, "apt");
+  /*start(1, "apt");
   start(2, "apt");
   start(3, "apt");
   start(4, "apt");
@@ -119,3 +131,4 @@ function determineHouseSizePts(size) {
   start(7, "large"); 
   
  displayOutput()
+ */
