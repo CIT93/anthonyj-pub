@@ -5,15 +5,15 @@ const movieData = [];
 
 function start() {
      movieData.push(
-    {movie: "Planet of the Apes", year: 1956, rating: "8/10"},
-    {movie: "Joy Ride", year: 2023, rating: "9/10"},
-    {movie: "Godzilla Minus One", year: 2023, rating: "10/10"}
+    {movie: "Planet of the Apes", year: 1956, rating: 8, watched: 1},
+    {movie: "Joy Ride", year: 2023, rating: 9, watched: 5},
+    {movie: "Godzilla Minus One", year: 2023, rating: 10, watched: 3}
      )
 }
 
 function displayMovieList(){
 const movieList = document.getElementById("movieList");
-for (movie of movieData) {
+movieData.forEach((movie) => {
     console.log(movie.movie)
     console.log(movie.year)
     console.log(movie.rating)
@@ -26,9 +26,15 @@ for (movie of movieData) {
     movieList.appendChild(movieTitle);
     movieList.appendChild(movieYear);
     movieList.appendChild(movieRating);
+    if (movie.rating > 6 && movie.watched <5) {
+      const movieRecommendation = document.createElement("p")
+      movieRecommendation.textContent = `I would recommend ${movie.movie}`
+      movieList.appendChild(movieRecommendation)
+    }
+    })
     
 }
-}
+
 start()
 displayMovieList();
 
